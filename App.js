@@ -3,12 +3,12 @@
 // Traducciones
 const translations = {
   en: {
-    appName: "Mindful",
-    tagline: "Your support in difficult moments",
+    appName: "Enough",
+    tagline: "Where eating finally feels enough",
     
     // Home cards
     urgeCardTitle: "I feel a strong urge",
-    urgeCardSubtitle: "Surf the impulse in 5 minutes",
+    urgeCardSubtitle: "Let's surf the urge to over eat",
     compassionCardTitle: "I ate and feel bad",
     compassionCardSubtitle: "Reconnect with compassion",
     mindfulEatingCardTitle: "Eat mindfully",
@@ -419,8 +419,8 @@ const translations = {
     about: "About"
   },
   es: {
-    appName: "Mindful",
-    tagline: "Tu apoyo en momentos difíciles",
+    appName: "Enough",
+    tagline: "Donde comer finalmente se siente suficiente",
     
     // Home cards
     urgeCardTitle: "Siento una urgencia fuerte",
@@ -838,7 +838,7 @@ const translations = {
 
 // Estado Global de la App
 const AppState = {
-  language: localStorage.getItem('mindfulLanguage') || 'en',
+  language: 'en',
   currentScreen: 'home', // 'home' | 'urgeSurfing' | 'selfCompassion' | 'checkin' | 'eating' | 'finish'
   breathCount: 0,
   meditationPhase: 0, // Para urge surfing y compassion
@@ -976,39 +976,30 @@ function renderHome() {
 
         <!-- Card 2: Self-Compassion (PRIMARY) -->
         <button 
-          class="bg-[#FFFBF5] text-[#5A5A5A] border-3 border-[#D88B77] rounded-3xl p-[clamp(1.5rem,5vw,2rem)] 
-                 hover:bg-white transition-all duration-200 text-left"
+          class="bg-[#D88B77] text-white border-3 border-[#5A5A5A] rounded-3xl p-[clamp(1.5rem,5vw,2rem)] 
+                 hover:bg-[#C67B68] transition-all duration-200 text-left"
           onclick="startSelfCompassion()">
           <h2 class="font-black text-[clamp(1.15rem,4vw,1.35rem)] mb-1.5">
             ${t().compassionCardTitle}
           </h2>
-          <p class="font-medium text-[clamp(0.9rem,3.5vw,1rem)] opacity-70">
+          <p class="font-medium text-[clamp(0.9rem,3.5vw,1rem)] opacity-90">
             ${t().compassionCardSubtitle}
           </p>
         </button>
 
         <!-- Card 3: Mindful Eating (SECONDARY) -->
         <button 
-          class="bg-white text-[#5A5A5A] border-3 border-[#5A5A5A] border-opacity-20 rounded-3xl p-[clamp(1.5rem,5vw,2rem)] 
-                 hover:bg-[#FFFBF5] transition-all duration-200 text-left"
+          class="bg-[#D88B77] text-white border-3 border-[#5A5A5A] rounded-3xl p-[clamp(1.5rem,5vw,2rem)] 
+                 hover:bg-[#C67B68] transition-all duration-200 text-left"
           onclick="startMindfulEating()">
-          <h2 class="font-bold text-[clamp(1.1rem,3.8vw,1.25rem)] mb-1.5">
+          <h2 class="font-black text-[clamp(1.15rem,4vw,1.35rem)] mb-1.5">
             ${t().mindfulEatingCardTitle}
           </h2>
-          <p class="font-medium text-[clamp(0.85rem,3.2vw,0.95rem)] opacity-60">
+          <p class="font-medium text-[clamp(0.9rem,3.5vw,1rem)] opacity-90">
             ${t().mindfulEatingCardSubtitle}
           </p>
         </button>
         
-      </div>
-      
-      <!-- Language toggle footer -->
-      <div class="text-center mt-[clamp(3rem,6vh,4rem)]">
-        <button 
-          class="text-[#5A5A5A] text-sm font-bold hover:text-[#D88B77] transition-colors"
-          onclick="toggleLanguage()">
-          ${AppState.language === 'en' ? 'Español' : 'English'}
-        </button>
       </div>
     </div>
   `;
@@ -1030,8 +1021,8 @@ function renderUrgeSurfing() {
   const currentPhase = AppState.meditationPhase;
   
   return `
-    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#F5F3EE]">
-      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20">
+    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#FFF4E6]">
+      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20 bg-[#FFF4E6]">
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
         <span class="mx-3 text-[#5A5A5A] opacity-60 text-[clamp(0.875rem,3vw,1rem)] tracking-wide font-bold">${t().inSession}</span>
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
@@ -1080,8 +1071,8 @@ function renderSelfCompassion() {
   const currentPhase = AppState.meditationPhase;
   
   return `
-    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#F5F3EE]">
-      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20">
+    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#FFF4E6]">
+      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20 bg-[#FFF4E6]">
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
         <span class="mx-3 text-[#5A5A5A] opacity-60 text-[clamp(0.875rem,3vw,1rem)] tracking-wide font-bold">${t().inSession}</span>
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
@@ -2256,8 +2247,8 @@ function renderEating() {
   const tipsArray = AppState.eatingMode === 'emotional' ? t().emotionalEatingTips : t().eatingTips;
   
   return `
-    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#F5F3EE]">
-      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20">
+    <div class="min-h-[100svh] min-h-[100vh] flex flex-col bg-[#FFF4E6]">
+      <div class="flex items-center justify-center px-[clamp(1.5rem,5vw,2rem)] py-[clamp(1rem,3vh,1.5rem)] pt-[max(1rem,env(safe-area-inset-top))] border-b border-[#5A5A5A] border-opacity-20 bg-[#FFF4E6]">
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
         <span class="mx-3 text-[#5A5A5A] opacity-60 text-[clamp(0.875rem,3vw,1rem)] tracking-wide font-bold">${t().inSession}</span>
         <div class="w-2 h-2 rounded-full bg-[#D88B77]"></div>
