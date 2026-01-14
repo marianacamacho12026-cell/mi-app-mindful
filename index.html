@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Eating</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VP3J5CJV1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VP3J5CJV1');
+    </script>
+    
+    <style>
+        body { background-color: #FFF4E6; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Fraunces', serif; }
+        
+        /* Responsive slider thumbs - 48px touch target */
+        .slider-thumb::-webkit-slider-thumb {
+            appearance: none;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background: #475F47;
+            cursor: pointer;
+            border: 2px solid rgba(26, 26, 26, 0.15);
+            box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 0.2);
+        }
+        .slider-thumb::-moz-range-thumb {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background: #475F47;
+            cursor: pointer;
+            border: 2px solid rgba(26, 26, 26, 0.15);
+            box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 0.2);
+        }
+        
+        /* Fallback for browsers without svh support */
+        @supports not (height: 100svh) {
+            .min-h-\[100svh\] {
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="App.js"></script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+Functions to Delete:
+- renderBreathing (line 1221)
+- renderHunger (line 1277)
+- renderHungerGuide (line 1338)
+- renderQuestionnaire (line 1403)
+- renderQuestionnaireResult (line 1487)
+- renderSimpleQuestionnaire (line 1567)
+- renderSimpleQuestionnaireResult (line 1618)
+- renderEmotionalHungerTools (line 1748)
+- renderUncertaintyTools (line 1811)
+- renderWaterTimer (line 1874)
+- renderPauseTimer (line 1942)
+- renderEmotionalCheckIn (line 2018)
+- renderEmotionalBreathing (line 2061)
+Plus all associated helper functions for questionnaires, timers, etc.
+- renderNavbar (line 3130)
+- renderHistory (line 3166)
+- renderProfile (line 3263)
+- renderTools (line 3337)
+- renderStrategy (line 3433)
+
+Total: ~2000 lines to delete
