@@ -2556,8 +2556,8 @@ function playFullMeditation() {
   
   // Use Spanish or English meditation based on language
   const meditationFile = AppState.language === 'es' ? 
-    'audio/meditation_full_es.mp3' : 
-    'audio/meditation_full.mp3';
+    'https://github.com/marianacamacho12026-cell/mi-app-mindful/releases/download/v1.0.0/meditation_full.mp3' : 
+    'https://github.com/marianacamacho12026-cell/mi-app-mindful/releases/download/v1.0.0/meditation_full.mp3';
   
   const audio = new Audio(meditationFile);
   audio.volume = 0;
@@ -2647,7 +2647,7 @@ function playUrgeSurfingAudio() {
     AppState.currentAudio = null;
   }
   
-  const audio = new Audio('audio/urge_surfing.mp3');
+  const audio = new Audio('https://github.com/marianacamacho12026-cell/mi-app-mindful/releases/download/v1.0.0/urge_surfing.mp3');
   audio.volume = 0;
   
   audio.play().then(() => {
@@ -2681,7 +2681,7 @@ function playSelfCompassionAudio() {
     AppState.currentAudio = null;
   }
   
-  const audio = new Audio('audio/self_compassion.mp3');
+  const audio = new Audio('https://github.com/marianacamacho12026-cell/mi-app-mindful/releases/download/v1.0.0/self_compassion.mp3');
   audio.volume = 0;
   
   audio.play().then(() => {
